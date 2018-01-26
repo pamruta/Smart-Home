@@ -36,8 +36,8 @@ def image_recognition(image_file):
 	items = []
 
 	# list of labels to be ignored as stop-words
-	# mostly generic words like fruit, vegetable, produce etc.
-	stoplist = ['Flora', 'Fruit', 'Produce', 'Plant', 'Vegetable', 'Food']
+	# mostly generic words like fruit, vegetable, food etc.
+	stoplist = ['Fruit', 'Produce', 'Plant', 'Vegetable', 'Food']
 
 	# calling aws rekognition api on image-file
 	client = boto3.client('rekognition')
