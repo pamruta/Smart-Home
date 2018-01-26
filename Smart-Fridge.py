@@ -9,10 +9,7 @@ def capture_image(image_file):
 	from time import sleep
 	camera = picamera.PiCamera()
 	camera.vflip = True
-	camera.start_preview(fullscreen=True)
-	sleep(5)
 	camera.capture(image_file)
-	camera.stop_preview()
 
 # calling text-to-speech api of aws polly
 def speak_polly(text_utterance):
@@ -39,6 +36,7 @@ def image_recognition(image_file):
 	items = []
 
 	# list of labels to be ignored as stop-words
+	# mostly generic words like fruit, vegetable, produce etc.
 	stoplist = ['Flora', 'Fruit', 'Produce', 'Plant', 'Vegetable', 'Food']
 
 	# calling aws rekognition api on image-file
@@ -53,7 +51,7 @@ def image_recognition(image_file):
 
 	return items
 
-# capture image and identify objects with image recognition
+# capture image and identify objects found in the image
 image_file = "image.jpg"
 capture_image(image_file)
 items = image_recognition(image_file)
