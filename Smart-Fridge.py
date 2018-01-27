@@ -6,7 +6,6 @@
 # function to capture image with Pi Camera
 def capture_image(image_file):
 	import picamera
-	from time import sleep
 	camera = picamera.PiCamera()
 	camera.vflip = True
 	camera.capture(image_file)
