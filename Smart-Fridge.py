@@ -1,6 +1,6 @@
 
-# this script takes a snapshot through Pi Camera
-# performs image recognition through AWS Rekognition Engine
+# this script captures image with Pi Camera
+# performs image recognition using AWS Rekognition Engine
 # and then calls AWS Polly Speech Synthesis API to describe the items found in the image
 
 # function to capture image with Pi Camera
@@ -26,7 +26,7 @@ def speak_polly(text_utterance):
 
 
 # image recognition code
-# takes image file as input and
+# takes an image file as input and
 # returns the list of items recognized in the image
 def image_recognition(image_file):
 
@@ -51,7 +51,7 @@ def image_recognition(image_file):
 
 	return items
 
-# capture image and identify objects found in the image
+# capture image and identify objects in the image
 image_file = "image.jpg"
 capture_image(image_file)
 items = image_recognition(image_file)
