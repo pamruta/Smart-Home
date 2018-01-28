@@ -9,6 +9,7 @@ def capture_image(image_file):
 	camera = picamera.PiCamera()
 	camera.vflip = True
 	camera.capture(image_file)
+	camera.close()
 
 # calling text-to-speech api of aws polly
 def speak_polly(text_utterance):
